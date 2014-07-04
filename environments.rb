@@ -1,7 +1,7 @@
 # CREATE USER postgres WITH NOSUPERUSER CREATEDB NOCREATEROLE;
 # CREATE DATABASE rescue_pet_development WITH OWNER postgres;
 configure :development do
-  db = URI.parse(ENV['DATABASE_URL'] || 'postgres:///localhost/rescue_pet_developement')
+  db = URI.parse(ENV['DATABASE_URL'] || 'postgres://postgres:@localhost/rescue_pet_development')
 
   ActiveRecord::Base.establish_connection(
     :adapter  => db.scheme == 'postgres' ? 'postgresql' : db.scheme,
