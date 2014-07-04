@@ -1,0 +1,16 @@
+%table
+  %tr
+    %th Name:
+    %th Description:
+    %th Species:
+    %th Status:
+  - @pets.each do |p|
+    %tr
+      %td
+        = p.name
+      %td
+        = p.description
+      %td
+        = p.species
+      %td
+        = p.status
