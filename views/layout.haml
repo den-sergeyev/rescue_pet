@@ -2,17 +2,19 @@
 %html
   %head
     %title Rescue pet dashboard
-    %link(rel="stylesheet" href="css/styles.css")
+    %link(rel="stylesheet" href="/css/styles.css")
   %body
     #wrapper
       #header
-        %h4 -- Header
+        %a{:href => "/pets"}
+          All pets
+        %a{:href => "/pets/new"}
+          Create new pet
 
       #content
+        =styled_flash
         =yield
 
       #side_bar
-        %h4 -- Sidebar
 
       #footer
-        %h4 -- Footer

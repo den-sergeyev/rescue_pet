@@ -3,14 +3,18 @@
   %label{:for => "pet_name"}
     Name:
   %input{:id => "pet_name", :class => "form-control", :name => "pet[name]", :type => "text", :value => "Pet name"}
-    = @pet.name
+  %br
   %label{:for => "pet_description"}
     Description:
-  %textarea{:id =>"pet_description", :name=>"pet[description]", :class => "form-control", :rows => "5"}
-    = @pet.status
+  %input{:id =>"pet_description", :name=>"pet[description]", :class => "form-control", :value => "Description"}
+  %br
+  %label{:for => "pet_species"}
+    Species:
+  %input{:id => "pet_species", :class => "form-control", :name => "pet[species]", :type => "text", :value => "Cat"}
+  %br
   %label{:for => "pet_status"}
     Status:
   %input{:id => "pet_status", :class => "form-control", :name => "pet[status]", :type => "text", :value => "Lost"}
-    = @pet.status
+  %br
   %button{ :type => "submit", :class => "btn btn-success"}
     Submit

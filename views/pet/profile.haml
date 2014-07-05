@@ -10,3 +10,6 @@
 %div
   Status:
   = @pet.status
+%div
+  %a{:href => "/pets/#{@pet.id}/edit"}
+    Edit

@@ -1,0 +1,21 @@
+%h2 Create Pet
+%form{:action => "/pets/#{@pet.id}", :method => "post", :role => "form"}
+  %input{:type => "hidden", :name => "_method", :value => "put"}
+  %label{:for => "pet_name"}
+    Name:
+  %input{:id => "pet_name", :class => "form-control", :name => "pet[name]", :type => "text", :value => "#{@pet.name}"}
+  %br
+  %label{:for => "pet_description"}
+    Description:
+  %input{:id =>"pet_description", :name=>"pet[description]", :class => "form-control", :value => "#{@pet.description}"}
+  %br
+  %label{:for => "pet_species"}
+    Species:
+  %input{:id => "pet_species", :class => "form-control", :name => "pet[species]", :type => "text", :value => "#{@pet.species}"}
+  %br
+  %label{:for => "pet_status"}
+    Status:
+  %input{:id => "pet_status", :class => "form-control", :name => "pet[status]", :type => "text", :value => "#{@pet.status}"}
+  %br
+  %button{ :type => "submit", :class => "btn btn-success"}
+    Submit

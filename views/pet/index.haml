@@ -14,3 +14,9 @@
         = p.species
       %td
         = p.status
+      %td
+        %a{:href => "/pets/#{p.id}/edit"}
+          Edit
+      %td
+        %a{:href => "/pets/#{p.id}"}
+          View
