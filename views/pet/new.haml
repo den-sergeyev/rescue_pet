@@ -1,20 +1,23 @@
-%h2 Create Pet
-%form{:action => "/pets", :method => "post", :role => "form"}
-  %label{:for => "pet_name"}
-    Name:
-  %input{:id => "pet_name", :class => "form-control", :name => "pet[name]", :type => "text", :value => "Pet name"}
-  %br
-  %label{:for => "pet_description"}
-    Description:
-  %input{:id =>"pet_description", :name=>"pet[description]", :class => "form-control", :value => "Description"}
-  %br
-  %label{:for => "pet_species"}
-    Species:
-  %input{:id => "pet_species", :class => "form-control", :name => "pet[species]", :type => "text", :value => "Cat"}
-  %br
-  %label{:for => "pet_status"}
-    Status:
-  %input{:id => "pet_status", :class => "form-control", :name => "pet[status]", :type => "text", :value => "Lost"}
-  %br
-  %button{ :type => "submit", :class => "btn btn-success"}
-    Submit
+.col-md-3
+.col-md-6
+  %h2 Create Pet
+  %form{:action => "/pets", :method => "post", :role => "form"}
+    %label{:for => "pet_name"}
+      Name:
+    %input{:id => "pet_name", :class => "form-control", :name => "pet[name]", :type => "text", :value => "Pet name"}
+    %br
+    %label{:for => "pet_description"}
+      Description:
+    %input{:id =>"pet_description", :name=>"pet[description]", :class => "form-control", :value => "Description"}
+    %br
+    %label{:for => "pet_species"}
+      Species:
+    %input{:id => "pet_species", :class => "form-control", :name => "pet[species]", :type => "text", :value => "Cat"}
+    %br
+    %label{:for => "pet_status"}
+      Status:
+    %input{:id => "pet_status", :class => "form-control", :name => "pet[status]", :type => "text", :value => "Lost"}
+    %br
+    %button{ :type => "submit", :class => "btn btn-success"}
+      Submit
+.col-md-3

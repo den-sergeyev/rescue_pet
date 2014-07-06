@@ -1,15 +1,21 @@
-%div
-  Name:
-  = @pet.name
-%div
-  Description:
-  = @pet.description
-%div
-  Species:
-  = @pet.species
-%div
-  Status:
-  = @pet.status
-%div
-  %a{:href => "/pets/#{@pet.id}/edit"}
-    Edit
+%table.table.table-striped
+  %tr
+    %th Name
+    %th Description
+    %th Species
+    %th Status
+    %th Actions
+  %tr
+    %td
+      = @pet.name
+    %td
+      = @pet.description
+    %td
+      = @pet.species
+    %td
+      = @pet.status
+    %td
+      %a{:href => "/pets/#{@pet.id}/edit"}
+        Edit
+      %a{:href => "/pets/#{@pet.id}/delete"}
+        Delete
