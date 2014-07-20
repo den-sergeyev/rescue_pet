@@ -1,5 +1,7 @@
-adapter: postgres
-database: pets_development
-username: user
-password: pass
+development:
+database: pets_development
+adapter: postgresql
+username: postgres
+password: postgres
 host: localhost
+

@@ -5,6 +5,8 @@ require 'sinatra/redirect_with_flash'
 require "sinatra/reloader" if development?
 require 'haml'
 require "./environments"
+require "sinatra/json"
+set database_file: "database.yml"
 
 enable :sessions
 
@@ -31,7 +33,7 @@ end
 
 get "/pets" do
   @pets = Pet.all
-  haml :'pet/index'
+  json pets: @pets.map(&:to_json)
 end
 
 get "/pets/new" do
