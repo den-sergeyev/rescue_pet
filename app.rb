@@ -12,53 +12,46 @@ enable :sessions
 
 require './models'
 
-get "/" do
-  haml :index
-end
-
-get "/about" do
-  haml :about
-end
-
-get "/contact" do
-  haml :contact
-end
-
 get "/pets" do
   @pets = Pet.all
   json pets: @pets.map(&:to_json)
 end
 
-get "/pets/new" do
-  @pet = Pet.new
-  haml :'pet/new'
-end
-
 get "/pets/:id" do
   @pet = Pet.find(params[:id])
-  haml :'pet/profile'
+  json pet: @pet.to_json
 end
 
 post "/pets" do
   @pet = Pet.create(params[:pet])
   if @pet.save
-    redirect :"/pets/#{@pet.id}", :info => "Pet was created successfully!"
-   else
-     haml :"pet/new", :danger => "Something went wrong :("
+    json status: :created, pet: @pet.to_json
+  else
+    json status: :error, errors: @pet.errors.to_json
   end
+end
+
+put "/pets/:id" do
+  @pet = Pet.find(params[:id])
+  if @pet.update(params[:pet])
+    json status: :updated, pet: @pet.to_json
+  else
+    json status: :error, errors: @pet.errors.to_json
+  end
+end
+
+#=======================================================
+#TODO should be deleted, is kept for debug purposes only
+get "/pets/new" do
+  @pet = Pet.new
+  haml :'pet/new'
 end
 
 get "/pets/:id/edit" do
   @pet = Pet.find(params[:id])
   haml :"pet/update"
-
 end
-
-put "/pets/:id" do
-  @pet = Pet.find(params[:id])
-  @pet.update(params[:pet])
-  redirect :"/pets/#{@pet.id}"
-end
+#=======================================================
 
 module Sinatra
   module Flash
