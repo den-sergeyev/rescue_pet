@@ -10,14 +10,7 @@ set database_file: "database.yml"
 
 enable :sessions
 
-class Pet < ActiveRecord::Base
-end
-
-class User < ActiveRecord::Base
-end
-
-class Event < ActiveRecord::Base
-end
+require './models'
 
 get "/" do
   haml :index
