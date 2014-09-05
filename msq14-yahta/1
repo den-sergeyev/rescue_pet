@@ -1,0 +1,5 @@
+dapter: postges
+database: pets_development_2
+username: user
+ password: pass2
+host: localhost
